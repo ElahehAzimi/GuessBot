@@ -1,4 +1,4 @@
-# AutoGuessBot - English Version
+# AutoGuessBot - نسخه فارسی
 import numpy as np
 import pyautogui
 import time
@@ -9,32 +9,28 @@ pyautogui.PAUSE = 0.1
 bot_guess = np.random.randint(1, 101)
 print(f"{bot_guess}")
 
-pyautogui.sleep(3)     # Go to chat and click in text box
+pyautogui.sleep(3)   # به صفحه چت بروید و روی کادرمتن کلیک کنید
 
-message = "Hey guys! I've picked a number between 1-100. Try to guess it!😈"
+message = "سلام بچه‌ها! من یه عدد ۱ تا ۱۰۰ انتخاب کردم. حدس بزنید چیه 😈"
 pyperclip.copy(message)
 pyautogui.hotkey('ctrl', 'v')
 pyautogui.press('enter')
 time.sleep(3)
 
-
-
 last_text = ""
 
 while True:
     time.sleep(5)
-    pyautogui.moveTo(1448, 903, duration=0.3)    # Set X and Y to the mouse position directly under or beside the last message (for selecting it)
+    pyautogui.moveTo(1448, 903, duration=0.3)  # x و y را در موقعیت ماوس زیر یا کنار آخرین متن تنظیم کنید برای انتخاب متن 
     
 
     pyautogui.rightClick()
     time.sleep(0.4)
-    pyautogui.moveTo(1459, 913, duration=0.3)   # Set X and Y to the mouse position of the 'Select' button (slightly offset from the last message)
-
+    pyautogui.moveTo(1459, 913, duration=0.3)  # کمی موقعیت یا x و y را تغییر دهید تا روی دکمه ی انتخاب کلیک کند و متن کپی شود
     pyautogui.leftClick()
     pyautogui.hotkey('ctrl', 'c')
     time.sleep(0.5)
-    pyautogui.moveTo(1459, 913, duration=0.3)   # Set X and Y to any safe position to left-click and exit the selection mode
-
+    pyautogui.moveTo(1459, 913, duration=0.3)  # موقعیت ماوس را ثابت نگه دارید تا از حالت انتخاب خارج شود
     pyautogui.leftClick()
     time.sleep(0.4)
 
@@ -50,11 +46,11 @@ while True:
 
     
     if text_int < bot_guess:
-            response = f" My number is bigger than {text_int}"
+            response = f"عدد من  بزرگتر از {text_int}"
     elif text_int > bot_guess:
-            response = f" My number is smaller than {text_int}"
+            response = f"عدد من کوچکتر از {text_int}"
     else:
-            response =" Amazing! You guessed it right! YOU WIN 🎉 "
+            response ="  آفرین درست حدس زدی رفیق🎉 "
             pyperclip.copy(response)
             pyautogui.hotkey('ctrl', 'v')
             pyautogui.press('enter')
@@ -69,3 +65,4 @@ while True:
     pyperclip.copy(response)
     pyautogui.hotkey('ctrl', 'v')
     pyautogui.press('enter')
+      
