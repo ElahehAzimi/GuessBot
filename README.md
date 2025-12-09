@@ -20,7 +20,7 @@ Auto Number Guessing Bot with pyautogui
 
 ## چطوری اجرا کنی؟
 ```bash
-pip install pyautogui pyperclip numpy
+pip install pyautogui pyperclip numpy time
 python guessnumber-bot.py
 
 فقط این دو تا عدد رو عوض کن (موقعیت موس روی آخرین پیام):
